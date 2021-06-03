@@ -1,0 +1,19 @@
+<%- include("partials/header") -%> 
+
+<div class="mainContent">
+        <h1>Home</h1>
+        <p><%= homePageContent %> </p>
+
+       <!-- <%posts.forEach(function(post) {%>   
+          <h1> <%= post.newTitle %> </h1>
+          <p><%= post.newPost %> </p>
+
+          <% })%>    -->
+
+          <% for(var i=0;i<posts.length; i++) { %>     
+                <h1><%= posts[i].newTitle %> </h1>
+                <p><%= posts[i].newPost.substring(1,100) + "..." %> <a style="color: red;" href= "/posts/<%=posts[i].newTitle%>">Read more</a></p> 
+              <% } %>  
+</div> 
+
+    <%- include("partials/footer") %> 
